@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Website Generator</title>
+</head>
+<body>
+<h2>Describe your website (Theme or Title)</h2>
+<input type="text" id="promptInput" placeholder="e.g. A personal
+blog for a student">
+<button onclick="generateWebsite()">Generate</button>
+<button onclick="startVoiceInput()">🎙 Voice Input</button>
+<p id="status"></p>
+<a id="liveLink" href="#" target="_blank"></a>
+<script>
+function generateWebsite() {
+const prompt = document.getElementById("promptInput").value;
+document.getElementById("status").innerText = "Generating and deploying...";
+fetch("http://localhost:3000/generate", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({ prompt }),
+})
+.then(res => res.json())
+.then(data => {
+document.getElementById("status").innerText = "Website is live!";
+const link = document.getElementById("liveLink");
+link.href = data.url;
+link.innerText = data.url;
+})
+.catch(() => document.getElementById("status").innerText =
+"Error occurred.");
+}
+function startVoiceInput() {
+  const recognition = new (window.SpeechRecognition ||
+window.webkitSpeechRecognition)();
+recognition.lang = 'en-US';
+recognition.start();
+recognition.onresult = (event) => {
+document.getElementById("promptInput").value =
+event.results[0][0].transcript;
+};
+}
+</script>
+</body>
+</html>

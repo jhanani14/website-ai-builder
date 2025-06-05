@@ -1,0 +1,110 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Student Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .project-item {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .project-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .project {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+
+    <section>
+        <h1>Projects</h1>
+        <div class="project">
+            <div class="project-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h2>Project 1</h2>
+                <p>Description of Project 1</p>
+            </div>
+            <div class="project-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h2>Project 2</h2>
+                <p>Description of Project 2</p>
+            </div>
+            <div class="project-item">
+                <img src="project3.jpg" alt="Project 3">
+                <h2>Project 3</h2>
+                <p>Description of Project 3</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2021 College Student Portfolio
+    </footer>
+</body>
+
+</html>
+```
+
+In this responsive HTML/CSS website, I have created a simple portfolio for a college student. The website includes a header with the title, a section for projects, and a footer with the copyright information. You can customize the projects' images and descriptions by replacing the placeholders (`project1.jpg`, `project2.jpg`, `project3.jpg`, etc.) with your own content.
